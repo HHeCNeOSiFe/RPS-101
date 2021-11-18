@@ -30,35 +30,36 @@ while True:  # Makes sure that the game size chosen is viable.
         if game_size not in acceptable_game_sizes:
             game_size = input('Please enter a number from the *-choices-* listed above.\n')
             continue
-        if game_size == 3:
-            for i in [0, 50, 93]:
-                choice_list_w.append(choice_list_f[i])
-        elif game_size == 5:
-            for i in [0, 50, 93, 'spock', 'lizard']:
-                choice_list_w.append(choice_list_f[i])
-        elif game_size == 7:
-            for i in [0, 36, 43, 50, 54, 93, 96]:
-                choice_list_w.append(choice_list_f[i])
-        elif game_size == 9:
-            for i in [0, 4, 36, 43, 50, 54, 74, 93, 96]:
-                choice_list_w.append(choice_list_f[i])
-        elif game_size == 11:
-            for i in [0, 4, 24, 36, 43, 50, 54, 65, 74, 93, 96]:
-                choice_list_w.append(choice_list_f[i])
-        elif game_size == 15:
-            for i in [0, 4, 17, 24, 28, 36, 43, 50, 54, 65, 68, 74, 86, 93, 96]:
-                choice_list_w.append(choice_list_f[i])
-        elif game_size == 25:
-            for i in [0, 4, 9, 13, 17, 24, 28, 32, 36, 40, 43, 47, 50, 54, 65, 60, 68, 74, 76, 82, 86, 90, 93, 96, 98]:
-                choice_list_w.append(choice_list_f[i])
-        elif game_size == 101:
-            choice_list_w = choice_list_f
         break
     except:
         game_size = input('Please enter a *-number-* from the choices listed above.\n')
         continue
+        
+if game_size == 3:  # Creating the list of options from which the player gets to choose
+    for i in [0, 50, 93]:
+        choice_list_w.append(choice_list_f[i])
+elif game_size == 5:
+    for i in [0, 50, 93, 'spock', 'lizard']:
+        choice_list_w.append(choice_list_f[i])
+elif game_size == 7:
+    for i in [0, 36, 43, 50, 54, 93, 96]:
+        choice_list_w.append(choice_list_f[i])
+elif game_size == 9:
+    for i in [0, 4, 36, 43, 50, 54, 74, 93, 96]:
+        choice_list_w.append(choice_list_f[i])
+elif game_size == 11:
+    for i in [0, 4, 24, 36, 43, 50, 54, 65, 74, 93, 96]:
+        choice_list_w.append(choice_list_f[i])
+elif game_size == 15:
+    for i in [0, 4, 17, 24, 28, 36, 43, 50, 54, 65, 68, 74, 86, 93, 96]:
+        choice_list_w.append(choice_list_f[i])
+elif game_size == 25:
+    for i in [0, 4, 9, 13, 17, 24, 28, 32, 36, 40, 43, 47, 50, 54, 65, 60, 68, 74, 76, 82, 86, 90, 93, 96, 98]:
+        choice_list_w.append(choice_list_f[i])
+elif game_size == 101:
+    choice_list_w = choice_list_f
 
-enter_your_move_prompt = 'Choose from --\n'  # Creating the list of options from which the player gets to choose.
+enter_your_move_prompt = 'Choose from --\n'  # Creating the prompt showing all options available to choose
 
 len_choice_list = [len(x) for x in choice_list_w]
 for i in range(game_size):
